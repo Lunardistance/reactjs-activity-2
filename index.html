@@ -1,0 +1,33 @@
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@16.8.3/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16.8.3/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.26.0"></script>
+
+    <script type = "text/babel">
+        const rootElement = document.getElementById('root');
+
+        //1st way to do this
+
+        // const element = React.createElement('div', 
+        // {className: 'container', children:['Hello World']});
+        // console.dir(element);
+        // reactDOM.render(element, rootElement);
+        // 
+        //2nd way to to do it
+
+        // const element = <div className='container'>Hello World</div>;
+        // ReactDOM.render(element, rootElement);
+        // console.dir(element);
+        //
+        //3rd way to do it
+        //You can place javascript inside curly brackets, but only executions, not statements.  If you need to write an if statement, write a one liner.  If you need to write a function, write an arrow function.
+        const content = 'Hello World';
+        const element = <div className='container'>{(() => content)()}</div>;
+        console.dir(element);
+        ReactDOM.render(element, rootElement);
+
+        </script>
+
+</body>
